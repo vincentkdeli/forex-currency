@@ -57,7 +57,6 @@ export default {
   methods: {
     toggleForm () {
       this.isFormActive = !this.isFormActive
-      return
     },
     submitForm () {
       const type = this.currency
@@ -65,6 +64,7 @@ export default {
       const obj = { type, value }
       
       this.dataset.push(obj)
+      this.toggleForm()
     },
     fetchData() {
       axios.get('https://api.exchangeratesapi.io/latest?base=USD')

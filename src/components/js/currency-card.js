@@ -3,7 +3,7 @@ export default {
   props: ['currencyType', 'currencyValue', 'amount'],
   computed: {
     total () {
-      return this.currencyValue * parseInt(this.amount)
+      return this.currencyValue * parseInt(this.amount) || 0
     }
   },
   methods: {
